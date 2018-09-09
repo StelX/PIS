@@ -1,0 +1,13 @@
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\bin\Debug\PIS_mag_1_imageLightening-Darkening.exe.config
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\bin\Debug\PIS_mag_1_imageLightening-Darkening.exe
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\bin\Debug\PIS_mag_1_imageLightening-Darkening.pdb
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\bin\Debug\ImageProcessor.dll
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\bin\Debug\ImageProcessor.xml
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.csprojAssemblyReference.cache
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening_Darkening.Form1.resources
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening_Darkening.Properties.Resources.resources
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.csproj.GenerateResource.cache
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.csproj.CoreCompileInputs.cache
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.csproj.CopyComplete
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.exe
+C:\Users\ro\Documents\Visual Studio 2017\Projects\PIS_mag_1_imageLightening-Darkening\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.pdb
