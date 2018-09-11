@@ -1,80 +1,75 @@
 ﻿using System;
-
 using System.Drawing;
-
 using System.Windows.Forms;
 
+using static PIS_mag_1_imageLightening_Darkening.ImageFilter;
 
 namespace PIS_mag_1_imageLightening_Darkening
 {
     public partial class Form1 : Form
     {
+        private Filter CurrentFilter;
+
         public Form1()
         {
             InitializeComponent();
-            pictureBox1.BackColor = Color.AliceBlue;
         }
 
-        private void Form1_DragDrop(object sender, DragEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            // take dropped items  and store 
-            var droppedFiles = (string[])e.Data.GetData(DataFormats.FileDrop);
+            inputPictureBox.Image = Properties.Resources.mainImage;
 
-            foreach (string file in droppedFiles)
+            CurrentFilter = Filter.None;
+            updateImageFilter();
+            updateVisibleNumeric();
+        }
+
+        private void updateVisibleNumeric()
+        {
+            filterLevelNumeric.Visible = lighterRadioButton.Checked || darkerRadioButton.Checked;
+        }
+
+        private void updateImageFilter()
+        {
+            int alphaFilter = Convert.ToInt32(filterLevelNumeric.Value * 255);
+            switch (CurrentFilter)
             {
-                pictureBox1.Image = Image.FromFile(file);
+                case Filter.None:
+                    outputPictureBox.Image = Properties.Resources.mainImage;
+                    break;
+                case Filter.Light:
+                    outputPictureBox.Image = LightenImage(inputPictureBox.Image, alphaFilter);
+                    break;
+                case Filter.Dark:
+                    outputPictureBox.Image = DarkenImage(inputPictureBox.Image, alphaFilter);
+                    break;
             }
-
         }
 
-        private void Form1_DragEnter(object sender, DragEventArgs e)
+        private void filterLevelNumeric_ValueChanged(object sender, EventArgs e)
         {
-            if(e.Data.GetDataPresent(DataFormats.FileDrop, false) == true)
-            {
-                e.Effect = DragDropEffects.All;
-            }
+            updateImageFilter();
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void noneRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-
-            pictureBox2.Image = Darker((Bitmap)(pictureBox1.Image), 128);
-        
-            
-
+            CurrentFilter = Filter.None;
+            updateImageFilter();
+            updateVisibleNumeric();
         }
 
-        public static Bitmap Lighter(Bitmap image, int correction)
+        private void lighterRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            Bitmap bmp = new Bitmap(image);
-            Rectangle r = new Rectangle(0, 0, bmp.Width, bmp.Height);
-            var alpha = correction;
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                using (Brush cloud_brush = new SolidBrush(Color.FromArgb(alpha, Color.White)))
-                {
-                    g.FillRectangle(cloud_brush, r);
-                }
-            }
-            return bmp;
-
+            CurrentFilter = Filter.Light;
+            updateImageFilter();
+            updateVisibleNumeric();
         }
 
-        public static Bitmap Darker(Bitmap image, int correction)
+        private void darkerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            Bitmap bmp = new Bitmap(image);
-            Rectangle r = new Rectangle(0, 0, bmp.Width, bmp.Height);
-            var alpha = correction;
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                using (Brush cloud_brush = new SolidBrush(Color.FromArgb(alpha, Color.Black)))
-                {
-                    g.FillRectangle(cloud_brush, r);
-                }
-            }
-            return bmp;
-
+            CurrentFilter = Filter.Dark;
+            updateImageFilter();
+            updateVisibleNumeric();
         }
-
     }
 }
