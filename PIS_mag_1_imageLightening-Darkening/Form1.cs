@@ -16,11 +16,14 @@ namespace PIS_mag_1_imageLightening_Darkening
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            inputPictureBox.Image = Properties.Resources.mainImage;
+            //inputPictureBox.Image = Properties.Resources.mainImage;
+
+            CustomImage myImage = new CustomImage(Properties.Resources.mainImage);
+            inputPictureBox.Image = myImage.bitmap();
 
             CurrentFilter = Filter.None;
-            updateImageFilter();
-            updateVisibleNumeric();
+            //updateImageFilter();
+            //updateVisibleNumeric();
         }
 
         private void updateVisibleNumeric()
