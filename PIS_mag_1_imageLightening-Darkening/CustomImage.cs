@@ -31,9 +31,9 @@ namespace PIS_mag_1_imageLightening_Darkening
             {
                 for (int j = 0; j < width; j++)
                 {
-                    int red = image.GetPixel(j, i).R;
-                    int green = image.GetPixel(j, i).G;
-                    int blue = image.GetPixel(j, i).B;
+                    int red = Convert.ToInt32(image.GetPixel(j, i).R / 25.5);
+                    int green = Convert.ToInt32(image.GetPixel(j, i).G / 25.5);
+                    int blue = Convert.ToInt32(image.GetPixel(j, i).B / 25.5);
 
                     referencePixels[i, j] = new CustomPixel(red, green, blue);
                     pixels[i, j] = new CustomPixel(red, green, blue);
@@ -51,9 +51,9 @@ namespace PIS_mag_1_imageLightening_Darkening
                 {
                     bitmap.SetPixel(
                         j, i, Color.FromArgb(
-                            pixels[i, j].Red,
-                            pixels[i, j].Green,
-                            pixels[i, j].Blue));
+                            Convert.ToInt32(pixels[i, j].Red * 25.5),
+                            Convert.ToInt32(pixels[i, j].Green * 25.5),
+                            Convert.ToInt32(pixels[i, j].Blue * 25.5)));
                 }
             }
             return bitmap;
