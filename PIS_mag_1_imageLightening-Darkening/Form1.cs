@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using static PIS_mag_1_imageLightening_Darkening.ImageFilter;
+using static PIS_mag_1_imageLightening_Darkening.CustomImage;
 
 namespace PIS_mag_1_imageLightening_Darkening
 {

@@ -5,6 +5,14 @@ namespace PIS_mag_1_imageLightening_Darkening
 {
     class CustomImage
     {
+        public enum Filter
+        {
+            None,
+            Light,
+            Dark,
+            Grayscale
+        }
+
         private int height;
         private int width;
 
