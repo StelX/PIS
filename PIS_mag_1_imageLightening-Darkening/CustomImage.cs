@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PIS_mag_1_imageLightening_Darkening
 {
@@ -21,19 +17,20 @@ namespace PIS_mag_1_imageLightening_Darkening
             width = image.Width;
 
             referencePixels = new CustomPixel[height, width];
+            pixels = new CustomPixel[height, width];
 
             for (int i = 0; i < height; i++)
             {
                 for (int j = 0; j < width; j++)
                 {
-                    referencePixels[i, j] = new CustomPixel(
-                        (int)(image.GetPixel(j, i).R / 25.5),
-                        (int)(image.GetPixel(j, i).G / 25.5),
-                        (int)(image.GetPixel(j, i).B / 25.5));
+                    int red = image.GetPixel(j, i).R;
+                    int green = image.GetPixel(j, i).G;
+                    int blue = image.GetPixel(j, i).B;
+
+                    referencePixels[i, j] = new CustomPixel(red, green, blue);
+                    pixels[i, j] = new CustomPixel(red, green, blue);
                 }
             }
-
-            pixels = referencePixels;
         }
 
         public Bitmap bitmap()
@@ -46,17 +43,82 @@ namespace PIS_mag_1_imageLightening_Darkening
                 {
                     bitmap.SetPixel(
                         j, i, Color.FromArgb(
-                            (int)(pixels[i, j].Red * 25.5),
-                            (int)(pixels[i, j].Green * 25.5),
-                            (int)(pixels[i, j].Blue * 25.5)));
+                            pixels[i, j].Red,
+                            pixels[i, j].Green,
+                            pixels[i, j].Blue));
                 }
             }
             return bitmap;
         }
 
-        public void reset()
+        public Bitmap grayscale()
         {
-            pixels = referencePixels;
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    int gray = Convert.ToInt32((referencePixels[i, j].Red + referencePixels[i, j].Green + referencePixels[i, j].Blue) / 3);
+                    pixels[i, j].Red = gray;
+                    pixels[i, j].Green = gray;
+                    pixels[i, j].Blue = gray;
+                }
+            }
+
+            return bitmap();
+        }
+
+        public Bitmap light(double value)
+        {
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    int red = referencePixels[i, j].Red;
+                    int green = referencePixels[i, j].Green;
+                    int blue = referencePixels[i, j].Blue;
+
+                    pixels[i, j].Red = Convert.ToInt32(red + (10 - red) * value);
+                    pixels[i, j].Green = Convert.ToInt32(green + (10 - green) * value);
+                    pixels[i, j].Blue = Convert.ToInt32(blue + (10 - blue) * value);
+                }
+            }
+
+            return bitmap();
+        }
+
+        public Bitmap dark(double value)
+        {
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    int red = referencePixels[i, j].Red;
+                    int green = referencePixels[i, j].Green;
+                    int blue = referencePixels[i, j].Blue;
+
+                    pixels[i, j].Red = Convert.ToInt32(red + (1 - red) * value);
+                    pixels[i, j].Green = Convert.ToInt32(green + (1 - green) * value);
+                    pixels[i, j].Blue = Convert.ToInt32(blue + (1 - blue) * value);
+                }
+            }
+
+            return bitmap();
+        }
+
+        public Bitmap reset()
+        {
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    pixels[i, j] = new CustomPixel(
+                        referencePixels[i, j].Red, 
+                        referencePixels[i, j].Green, 
+                        referencePixels[i, j].Blue);
+                }
+            }
+
+            return bitmap();
         }
     }
 }

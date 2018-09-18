@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PIS_mag_1_imageLightening_Darkening
 {
@@ -12,15 +8,31 @@ namespace PIS_mag_1_imageLightening_Darkening
         private int green;
         private int blue;
 
+        static private double coeff = 255 / 10;
+
         public CustomPixel(int red, int green, int blue)
         {
-            this.red = red;
-            this.green = green;
-            this.blue = blue;
+            this.red = Convert.ToInt32(red / coeff);
+            this.green = Convert.ToInt32(green / coeff);
+            this.blue = Convert.ToInt32(blue / coeff);
         }
 
-        public int Red { get => red; set => red = value; }
-        public int Green { get => green; set => green = value; }
-        public int Blue { get => blue; set => blue = value; }
+        public int Red
+        {
+            get => Convert.ToInt32(red * coeff);
+            set => red = Convert.ToInt32(value / coeff);
+        }
+
+        public int Green
+        {
+            get => Convert.ToInt32(green * coeff);
+            set => green = Convert.ToInt32(value / coeff);
+        }
+
+        public int Blue
+        {
+            get => Convert.ToInt32(blue * coeff);
+            set => blue = Convert.ToInt32(value / coeff);
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace PIS_mag_1_imageLightening_Darkening
     public partial class Form1 : Form
     {
         private Filter CurrentFilter;
+        private CustomImage myImage;
 
         public Form1()
         {
@@ -16,20 +17,17 @@ namespace PIS_mag_1_imageLightening_Darkening
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //inputPictureBox.Image = Properties.Resources.mainImage;
-
-            CustomImage myImage = new CustomImage(Properties.Resources.mainImage);
+            myImage = new CustomImage(Properties.Resources.mainImage);
             inputPictureBox.Image = myImage.bitmap();
 
             CurrentFilter = Filter.None;
-            //updateImageFilter();
-            //updateVisibleNumeric();
+            updateImageFilter();
+            updateVisibleNumeric();
         }
 
         private void updateVisibleNumeric()
         {
-            filterLevelNumeric.Visible = lighterRadioButton.Checked || darkerRadioButton.Checked ||
-                grayscaleRadioButton.Checked;
+            filterLevelNumeric.Visible = lighterRadioButton.Checked || darkerRadioButton.Checked;
         }
 
         private void updateImageFilter()
@@ -37,16 +35,16 @@ namespace PIS_mag_1_imageLightening_Darkening
             switch (CurrentFilter)
             {
                 case Filter.None:
-                    outputPictureBox.Image = Properties.Resources.mainImage;
+                    outputPictureBox.Image = myImage.reset();
                     break;
                 case Filter.Light:
-                    outputPictureBox.Image = LightenImage(inputPictureBox.Image, Convert.ToDouble(filterLevelNumeric.Value));
+                    outputPictureBox.Image = myImage.light(Convert.ToDouble(filterLevelNumeric.Value));
                     break;
                 case Filter.Dark:
-                    outputPictureBox.Image = DarkenImage(inputPictureBox.Image, Convert.ToDouble(filterLevelNumeric.Value));
+                    outputPictureBox.Image = myImage.dark(Convert.ToDouble(filterLevelNumeric.Value));
                     break;
                 case Filter.Grayscale:
-                    outputPictureBox.Image = GrayscaleImage(inputPictureBox.Image, Convert.ToDouble(filterLevelNumeric.Value));
+                    outputPictureBox.Image = myImage.grayscale();
                     break;
             }
         }
