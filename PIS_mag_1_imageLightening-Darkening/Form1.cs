@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 using static PIS_mag_1_imageLightening_Darkening.ImageFilter;
@@ -26,22 +25,25 @@ namespace PIS_mag_1_imageLightening_Darkening
 
         private void updateVisibleNumeric()
         {
-            filterLevelNumeric.Visible = lighterRadioButton.Checked || darkerRadioButton.Checked;
+            filterLevelNumeric.Visible = lighterRadioButton.Checked || darkerRadioButton.Checked ||
+                grayscaleRadioButton.Checked;
         }
 
         private void updateImageFilter()
         {
-            int alphaFilter = Convert.ToInt32(filterLevelNumeric.Value * 255);
             switch (CurrentFilter)
             {
                 case Filter.None:
                     outputPictureBox.Image = Properties.Resources.mainImage;
                     break;
                 case Filter.Light:
-                    outputPictureBox.Image = LightenImage(inputPictureBox.Image, alphaFilter);
+                    outputPictureBox.Image = LightenImage(inputPictureBox.Image, Convert.ToDouble(filterLevelNumeric.Value));
                     break;
                 case Filter.Dark:
-                    outputPictureBox.Image = DarkenImage(inputPictureBox.Image, alphaFilter);
+                    outputPictureBox.Image = DarkenImage(inputPictureBox.Image, Convert.ToDouble(filterLevelNumeric.Value));
+                    break;
+                case Filter.Grayscale:
+                    outputPictureBox.Image = GrayscaleImage(inputPictureBox.Image, Convert.ToDouble(filterLevelNumeric.Value));
                     break;
             }
         }
@@ -68,6 +70,13 @@ namespace PIS_mag_1_imageLightening_Darkening
         private void darkerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             CurrentFilter = Filter.Dark;
+            updateImageFilter();
+            updateVisibleNumeric();
+        }
+
+        private void grayscaleRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            CurrentFilter = Filter.Grayscale;
             updateImageFilter();
             updateVisibleNumeric();
         }

@@ -21,3 +21,13 @@ E:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLig
 E:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.exe
 E:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.pdb
 E:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.csprojResolveAssemblyReference.cache
+C:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\bin\Debug\PIS_mag_1_imageLightening-Darkening.exe.config
+C:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\bin\Debug\PIS_mag_1_imageLightening-Darkening.exe
+C:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\bin\Debug\PIS_mag_1_imageLightening-Darkening.pdb
+C:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.csprojAssemblyReference.cache
+C:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening_Darkening.Form1.resources
+C:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening_Darkening.Properties.Resources.resources
+C:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.csproj.GenerateResource.cache
+C:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.csproj.CoreCompileInputs.cache
+C:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.exe
+C:\Projects\PIS\PIS_mag_1_imageLightening-Darkening\obj\Debug\PIS_mag_1_imageLightening-Darkening.pdb
