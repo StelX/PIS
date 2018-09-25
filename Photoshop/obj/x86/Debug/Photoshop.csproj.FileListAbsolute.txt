@@ -1,0 +1,7 @@
+F:\Photoshop\bin\Debug\cat.jpg
+F:\Photoshop\bin\Debug\MyPhotoshop.exe
+F:\Photoshop\bin\Debug\MyPhotoshop.pdb
+F:\Photoshop\obj\x86\Debug\Photoshop.csproj.CoreCompileInputs.cache
+F:\Photoshop\obj\x86\Debug\MyPhotoshop.exe
+F:\Photoshop\obj\x86\Debug\MyPhotoshop.pdb
+F:\Photoshop\obj\x86\Debug\Photoshop.csprojResolveAssemblyReference.cache
