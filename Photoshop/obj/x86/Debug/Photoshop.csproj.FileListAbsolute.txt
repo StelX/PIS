@@ -5,3 +5,13 @@ F:\Photoshop\obj\x86\Debug\Photoshop.csproj.CoreCompileInputs.cache
 F:\Photoshop\obj\x86\Debug\MyPhotoshop.exe
 F:\Photoshop\obj\x86\Debug\MyPhotoshop.pdb
 F:\Photoshop\obj\x86\Debug\Photoshop.csprojResolveAssemblyReference.cache
+C:\Projects\PIS\Photoshop\bin\Debug\cat.jpg
+C:\Projects\PIS\Photoshop\bin\Debug\MyPhotoshop.exe.config
+C:\Projects\PIS\Photoshop\bin\Debug\MyPhotoshop.exe
+C:\Projects\PIS\Photoshop\bin\Debug\MyPhotoshop.pdb
+C:\Projects\PIS\Photoshop\obj\x86\Debug\Photoshop.csprojAssemblyReference.cache
+C:\Projects\PIS\Photoshop\obj\x86\Debug\Photoshop.csproj.CoreCompileInputs.cache
+C:\Projects\PIS\Photoshop\obj\x86\Debug\MyPhotoshop.exe
+C:\Projects\PIS\Photoshop\obj\x86\Debug\MyPhotoshop.pdb
+C:\Projects\PIS\Photoshop\obj\x86\Debug\MyPhotoshop.MainWindow.resources
+C:\Projects\PIS\Photoshop\obj\x86\Debug\Photoshop.csproj.GenerateResource.cache

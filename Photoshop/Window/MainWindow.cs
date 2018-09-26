@@ -149,6 +149,22 @@ namespace MyPhotoshop
 			processed.Image=resultBmp;
 		}
 
-        
-	}
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // MainWindow
+            // 
+            this.ClientSize = new System.Drawing.Size(274, 229);
+            this.Name = "MainWindow";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -8,36 +8,38 @@ namespace MyPhotoshop
 	{
 		public static Photo Bitmap2Photo(Bitmap bmp)
 		{
-			var photo=new Photo();
-			photo.width=bmp.Width;
-			photo.height=bmp.Height;
-			photo.pixels=new Pixel[bmp.Width,bmp.Height];
+			var photo=new Photo(bmp.Width, bmp.Height);
+			photo.Pixels=new Pixel[bmp.Width,bmp.Height];
 			for (int x=0;x<bmp.Width;x++)
 				for (int y=0;y<bmp.Height;y++)
 				{
 				var pixel=bmp.GetPixel (x,y);
-                    photo.pixels[x, y] = new Pixel((double)pixel.R / 255, (double)pixel.G / 255, (double)pixel.B / 255);
-				
+                    photo[x, y] = new Pixel((double)pixel.R / 255, (double)pixel.G / 255, (double)pixel.B / 255);
 				}
 			return photo;
 		}
 		
 		static int ToChannel(double val)
 		{
-            if (val<0 || val>1)
-                throw new Exception(string.Format("Wrong channel value {0} (the value must be between 0 and 1", val));
-			return (int)(val * 255);
+            if (val > 1)
+                val = 1;
+            if (val < 0)
+                val = 0;
+            //if (val < 0 || val > 1)
+            //    throw new Exception(string.Format("Wrong channel value {0} (the value must be between 0 and 1", val));
+
+            return (int)(val * 255);
 		}
 		
 		public static Bitmap Photo2Bitmap(Photo photo)
 		{
-			var bmp=new Bitmap(photo.width,photo.height);
+			var bmp=new Bitmap(photo.Width,photo.Height);
 			for (int x=0;x<bmp.Width;x++)
 				for (int y=0;y<bmp.Height;y++)
 					bmp.SetPixel(x,y,Color.FromArgb (
-						ToChannel (photo.pixels[x,y].R),
-						ToChannel (photo.pixels[x,y].G),
-						ToChannel (photo.pixels[x,y].B) ));
+						ToChannel (photo[x,y].R),
+						ToChannel (photo[x,y].G),
+						ToChannel (photo[x,y].B) ));
 					       		
 			return bmp;
 		}

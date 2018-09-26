@@ -13,3 +13,4 @@
 PIS_mag_1_imageLightening-Darkening/bin/Debug/PIS_mag_1_imageLightening-Darkening.pdb
 PIS_mag_1_imageLightening-Darkening/obj/Debug/PIS_mag_1_imageLightening-Darkening.pdb
 .vs/PIS_mag_1_imageLightening-Darkening/v15/.suo
+*.lock
